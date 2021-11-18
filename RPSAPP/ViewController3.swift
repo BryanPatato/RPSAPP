@@ -14,6 +14,7 @@ class ViewController3: UIViewController,UINavigationControllerDelegate,UITabBarC
     var timer = Timer()
     var rToM:[[Int]] = [[]]
     var tabBarController2: UITabBarController!
+    var colors:color = .blue
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,26 @@ class ViewController3: UIViewController,UINavigationControllerDelegate,UITabBarC
         tabBarController2 = i
         }
         rToM.remove(at: 0)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        view.backgroundColor = colorsSs()
+        
+    }
+    
+    func colorsSs() -> UIColor{
+        switch colors {
+        case .blue:
+            return UIColor.blue
+        case .green:
+            return UIColor.green
+        case .pink:
+            return UIColor.systemPink
+        case .red:
+            return UIColor.red
+        case .yellow:
+            return UIColor.yellow
+        }
     }
     
     @objc func timerClear(){

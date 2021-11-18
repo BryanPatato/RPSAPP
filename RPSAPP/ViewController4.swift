@@ -18,6 +18,7 @@ class ViewController4: UIViewController,UITableViewDelegate,UITableViewDataSourc
     var wins:Int = 0
     var losses:Int = 0
     var tie:Int = 0
+    var colors:color = .blue
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,25 @@ class ViewController4: UIViewController,UITableViewDelegate,UITableViewDataSourc
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        view.backgroundColor = colorsSs()
+    }
+    
+    func colorsSs() -> UIColor{
+        switch colors {
+        case .blue:
+            return UIColor.blue
+        case .green:
+            return UIColor.green
+        case .pink:
+            return UIColor.systemPink
+        case .red:
+            return UIColor.red
+        case .yellow:
+            return UIColor.yellow
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(rToMs.count)
